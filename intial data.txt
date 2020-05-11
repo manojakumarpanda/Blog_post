@@ -1,0 +1,2 @@
+SuperUser=superuser1@email.com
+password=superpass1

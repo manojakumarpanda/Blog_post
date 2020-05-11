@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ tittle }}</title>
+</head>
+<body>
+    <table border="2px">
+        <thead>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Content</td>
+            <td>Links</td>
+            <td>Image</td>
+        </thead>
+        {% if all_blogs %}
+            {% for data in all_blogs %}
+                <tbody>
+                    <td>{{ data.blog_id }}</td>
+                    <td>{{ data.title }}</td>
+                    <td>{{ data.content|truncatechars:10 }}</td>
+                    <td>{{ data.slug }}</td>
+                    <td><a href="{{ data.get_absolute_url }}"> Click here</a></td>
+                    <td><a href="{{ data.get_absolute_url }}"><img src="{{ data.image.url }}" alt="No pic soon updated" height="80px" width="100px"> </a> </td>
+                </tbody>
+            {% endfor %}
+        {% else %}
+        <tbody>
+        <td>No Data Found</td>
+        <td>No Data Found</td>
+        <td>No Data Found</td>
+        <td><img src="{{ deta.photo.url }}" alt="No pic soon updated" height="80px" width="100px">  </td>
+        </tbody>
+        {% endif %}
+
+    </table>
+
+</body>
+</html>
