@@ -1,0 +1,14 @@
+.body{
+    padding: 0px;
+    margin: 0px;
+}
+.nav-item {
+    border: none;
+    border-bottom: chartreuse;
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
+.nav-item.nav-link{
+    border: none;
+}
